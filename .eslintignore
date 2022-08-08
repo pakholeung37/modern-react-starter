@@ -5,3 +5,4 @@ coverage
 build
 examples/vue-ts
 plop-templates
+*.js

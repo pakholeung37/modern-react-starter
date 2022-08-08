@@ -1,17 +1,16 @@
 {
-  "name": "main",
+  "name": "editor-playground",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "clean": "rimraf dist .turbo",
-    "start": "vite --port 9000",
+    "start": "vite --port 9001",
     "build": "vite build",
     "serve": "vite preview",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@trantor/editor": "workspace:*",
-    "@trantor/utils": "workspace:*",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

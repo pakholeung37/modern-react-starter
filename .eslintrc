@@ -57,10 +57,7 @@
     "import/no-extraneous-dependencies": "off",
     "@typescript-eslint/lines-between-class-members": "off",
     "no-alert": "off",
-    "react/jsx-filename-extension": [
-      "error",
-      { "extensions": [".js", ".tsx"] }
-    ],
+    "react/jsx-filename-extension": ["error", { "extensions": [".js", ".tsx"] }],
     "react/jsx-props-no-spreading": "off",
     "react/no-array-index-key": "off",
     "react/require-default-props": "off",
@@ -71,7 +68,15 @@
     "import/no-named-as-default": "off",
     "prefer-object-spread": "off",
     "arrow-body-style": "off",
-    "react/sort-comp": "off"
+    "react/sort-comp": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "varsIgnorePattern": "^_",
+        "argsIgnorePattern": "^_",
+        "ignoreRestSiblings": true
+      }
+    ]
   },
   "overrides": [
     {
@@ -82,7 +87,7 @@
         "scripts/**/*.ts"
       ],
       "parserOptions": {
-        "project": ["tsconfig.json"]
+        "project": "tsconfig.json"
       }
     }
   ]
