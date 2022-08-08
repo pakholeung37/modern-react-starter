@@ -80,12 +80,7 @@
   },
   "overrides": [
     {
-      "files": [
-        "packages/**/*.ts",
-        "packages/**/*.tsx",
-        "tooling/**/*/*.ts",
-        "scripts/**/*.ts"
-      ],
+      "files": ["*.ts", "*.tsx"],
       "parserOptions": {
         "project": "tsconfig.json"
       }

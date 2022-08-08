@@ -2,18 +2,19 @@
   "name": "@trantor/editor",
   "version": "0.0.1",
   "private": true,
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsup src/index.ts",
+    "build": "tsup src/index.ts --dts",
     "dev": "pnpm build --sourcemap --watch",
     "clean": "rimraf dist .turbo",
     "typecheck": "tsc --noEmit",
     "build:fast": "tsup src/index.ts"
   },
   "peerDependencies": {
-    "react": ">=16.8"
+    "react": ">=16.8",
+    "@vanilla-extract/css": ">=1"
   },
   "license": "MIT"
 }

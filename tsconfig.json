@@ -1,6 +1,6 @@
 {
   "exclude": ["node_modules"],
-  "include": ["packages", "shared", "scripts", "examples"],
+  "include": ["packages", "shared", "scripts"],
   "compilerOptions": {
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
