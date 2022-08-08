@@ -14,7 +14,8 @@ importers:
       '@types/react-dom': 18.0.6
       '@typescript-eslint/eslint-plugin': ^5.30.6
       '@typescript-eslint/parser': ^5.30.6
-      '@vanilla-extract/css': ^1.7.0
+      '@vanilla-extract/css': 1.7.2
+      '@vanilla-extract/vite-plugin': 3.3.0
       '@vitejs/plugin-react': 2.0.0
       commitlint: ^17.0.3
       eslint: 8.21.0
@@ -27,14 +28,12 @@ importers:
       eslint-plugin-react: 7.30.1
       eslint-plugin-react-hooks: 4.6.0
       eslint-plugin-testing-library: 5.5.1
-      husky: ^8.0.1
+      husky: 8.0.1
       jest: ^28.1.3
       jest-watch-typeahead: ^2.0.0
       json-format-highlight: ^1.0.4
       lint-staged: 13.0.3
       prettier: 2.7.1
-      react: 18.2.0
-      react-dom: 18.2.0
       tsup: 6.2.1
       turbo: 1.4.2
       typescript: 4.7.4
@@ -51,6 +50,7 @@ importers:
       '@typescript-eslint/eslint-plugin': 5.31.0_jnss7dz76sznncvpyatba5hbxa
       '@typescript-eslint/parser': 5.31.0_qugx7qdu5zevzvxaiqyxfiwquq
       '@vanilla-extract/css': 1.7.2
+      '@vanilla-extract/vite-plugin': 3.3.0_vite@3.0.1
       '@vitejs/plugin-react': 2.0.0_vite@3.0.1
       commitlint: 17.0.3
       eslint: 8.21.0
@@ -69,29 +69,35 @@ importers:
       json-format-highlight: 1.0.4
       lint-staged: 13.0.3
       prettier: 2.7.1
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
       tsup: 6.2.1_typescript@4.7.4
       turbo: 1.4.2
       typescript: 4.7.4
       vite: 3.0.1
 
-  examples/editor-playground:
-    specifiers:
-      '@trantor/editor': workspace:*
-    dependencies:
-      '@trantor/editor': link:../../packages/editor
-
   packages/editor:
     specifiers: {}
+
+  packages/editor-playground:
+    specifiers:
+      '@trantor/editor': workspace:*
+      react: 18.2.0
+      react-dom: 18.2.0
+    dependencies:
+      '@trantor/editor': link:../editor
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
 
   packages/main:
     specifiers:
       '@trantor/editor': workspace:*
       '@trantor/utils': workspace:*
+      react: 18.2.0
+      react-dom: 18.2.0
     dependencies:
       '@trantor/editor': link:../editor
       '@trantor/utils': link:../utils
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
 
   packages/utils:
     specifiers: {}
@@ -1624,8 +1630,34 @@ packages:
       outdent: 0.8.0
     dev: false
 
+  /@vanilla-extract/integration/5.0.0:
+    resolution: {integrity: sha512-HwglsIxGYtV4IXFfyQ6GzZLFoaWaW+QkNx8UhXbgsCWUoPqpSbioukCOA+SuSuzsIcEZ3hkD0Y5ixITQNtnzjQ==}
+    dependencies:
+      '@vanilla-extract/css': 1.7.2
+      esbuild: 0.11.23
+      eval: 0.1.6
+      find-up: 5.0.0
+      javascript-stringify: 2.1.0
+      lodash: 4.17.21
+      outdent: 0.8.0
+    dev: false
+
   /@vanilla-extract/private/1.0.3:
     resolution: {integrity: sha512-17kVyLq3ePTKOkveHxXuIJZtGYs+cSoev7BlP+Lf4916qfDhk/HBjvlYDe8egrea7LNPHKwSZJK/bzZC+Q6AwQ==}
+    dev: false
+
+  /@vanilla-extract/vite-plugin/3.3.0_vite@3.0.1:
+    resolution: {integrity: sha512-9tn6hM95rH+mnxgZyGDg0fC5QfsaI0kNycimNuFzvIl4gic0qlje2FOQ33iJjTxeMkgUhASJl2+jhTcnOj1tEw==}
+    peerDependencies:
+      vite: ^2.2.3
+    dependencies:
+      '@vanilla-extract/integration': 5.0.0
+      outdent: 0.8.0
+      postcss: 8.4.16
+      postcss-load-config: 3.1.4_postcss@8.4.16
+      vite: 3.0.1
+    transitivePeerDependencies:
+      - ts-node
     dev: false
 
   /@vitejs/plugin-react/2.0.0_vite@3.0.1:
@@ -2638,6 +2670,12 @@ packages:
     dev: false
     optional: true
 
+  /esbuild/0.11.23:
+    resolution: {integrity: sha512-iaiZZ9vUF5wJV8ob1tl+5aJTrwDczlvGP0JoMmnpC2B0ppiMCu8n8gmy5ZTGl5bcG081XBVn+U+jP+mPFm5T5Q==}
+    hasBin: true
+    requiresBuild: true
+    dev: false
+
   /esbuild/0.14.51:
     resolution: {integrity: sha512-+CvnDitD7Q5sT7F+FM65sWkF8wJRf+j9fPcprxYV4j+ohmzVj2W7caUqH2s5kCaCJAfcAICjSlKhDCcvDpU7nw==}
     engines: {node: '>=12'}
@@ -3005,6 +3043,13 @@ packages:
   /esutils/2.0.3:
     resolution: {integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==}
     engines: {node: '>=0.10.0'}
+    dev: false
+
+  /eval/0.1.6:
+    resolution: {integrity: sha512-o0XUw+5OGkXw4pJZzQoXUk+H87DHuC+7ZE//oSrRGtatTmr12oTnLfg6QOq9DyTt0c/p4TwzgmkKrBzWTSizyQ==}
+    engines: {node: '>= 0.8'}
+    dependencies:
+      require-like: 0.1.2
     dev: false
 
   /execa/5.1.1:
@@ -3634,6 +3679,10 @@ packages:
     dependencies:
       html-escaper: 2.0.2
       istanbul-lib-report: 3.0.0
+    dev: false
+
+  /javascript-stringify/2.1.0:
+    resolution: {integrity: sha512-JVAfqNPTvNq3sB/VHQJAFxN/sPgKnsKrCwyRt15zwNCdrMMJDdcEOdubuy+DuJYYdm0ox1J4uzEuYKkN+9yhVg==}
     dev: false
 
   /jest-changed-files/28.1.3:
@@ -4725,6 +4774,23 @@ packages:
       yaml: 1.10.2
     dev: false
 
+  /postcss-load-config/3.1.4_postcss@8.4.16:
+    resolution: {integrity: sha512-6DiM4E7v4coTE4uzA8U//WhtPwyhiim3eyjEMFCnUpzbrkK9wJHgKDT2mR+HbtSrd/NubVaYTOpSpjUl8NQeRg==}
+    engines: {node: '>= 10'}
+    peerDependencies:
+      postcss: '>=8.0.9'
+      ts-node: '>=9.0.0'
+    peerDependenciesMeta:
+      postcss:
+        optional: true
+      ts-node:
+        optional: true
+    dependencies:
+      lilconfig: 2.0.6
+      postcss: 8.4.16
+      yaml: 1.10.2
+    dev: false
+
   /postcss/8.4.16:
     resolution: {integrity: sha512-ipHE1XBvKzm5xI7hiHCZJCSugxvsdq2mPnsq5+UF+VHCjiBvtDrlxJfMBToWaP9D5XlgNmcFGqoHmUn0EYEaRQ==}
     engines: {node: ^10 || ^12 || >=14}
@@ -4896,6 +4962,10 @@ packages:
   /require-from-string/2.0.2:
     resolution: {integrity: sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==}
     engines: {node: '>=0.10.0'}
+    dev: false
+
+  /require-like/0.1.2:
+    resolution: {integrity: sha512-oyrU88skkMtDdauHDuKVrgR+zuItqr6/c//FXzvmxRGMexSDc6hNvJInGW3LL46n+8b50RykrvwSUIIQH2LQ5A==}
     dev: false
 
   /resolve-cwd/3.0.0:

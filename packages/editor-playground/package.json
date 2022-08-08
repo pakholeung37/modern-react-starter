@@ -5,7 +5,6 @@
   "scripts": {
     "clean": "rimraf dist .turbo",
     "start": "vite --port 9001",
-    "build": "vite build",
     "serve": "vite preview",
     "typecheck": "tsc --noEmit"
   },
