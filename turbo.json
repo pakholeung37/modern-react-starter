@@ -1,6 +1,6 @@
 {
   "$schema": "https://turborepo.org/schema.json",
-  "baseBranch": "origin/main",
+  "baseBranch": "origin/master",
   "pipeline": {
     "build": {
       "outputs": ["dist/**", "node_modules/.cache/.tsbuildinfo"],
@@ -8,6 +8,9 @@
     },
     "build-fast": {
       "outputs": ["dist/**"]
+    },
+    "dev": {
+      "cache": false
     },
     "typecheck": {
       "outputs": ["node_modules/.cache/.tsbuildinfo"],

@@ -1,0 +1,24 @@
+{
+  "name": "@trantor/main",
+  "version": "0.0.15",
+  "private": true,
+  "scripts": {
+    "clean": "rimraf dist .turbo",
+    "dev": "vite --port 3000",
+    "build": "vite build",
+    "serve": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": ">=16.8"
+  },
+  "dependencies": {
+    "@trantor/editor": "workspace:*",
+    "@trantor/utils": "workspace:*"
+  },
+  "devDependencies": {
+    "vite": "3.0.1",
+    "@vitejs/plugin-react": "2.0.0"
+  },
+  "license": "MIT"
+}

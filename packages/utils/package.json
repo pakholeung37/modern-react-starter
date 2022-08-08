@@ -1,0 +1,19 @@
+{
+  "name": "@trantor/utils",
+  "version": "0.0.15",
+  "private": true,
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --dts",
+    "dev": "pnpm build --sourcemap --watch",
+    "clean": "rimraf dist .turbo",
+    "typecheck": "tsc --noEmit",
+    "build:fast": "tsup src/index.ts"
+  },
+  "peerDependencies": {
+    "react": ">=16.8"
+  },
+  "license": "MIT"
+}
