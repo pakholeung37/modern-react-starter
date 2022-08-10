@@ -1,5 +1,5 @@
-# Trantor Monorepo Template
+# Modern React Starter
 
 ## License
 
-MIT © [Segun Adebayo](https://github.com/segunadebayo)
+MIT
