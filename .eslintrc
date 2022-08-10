@@ -10,7 +10,7 @@
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "airbnb-typescript",
-    "prettier"
+    "plugin:prettier/recommended"
   ],
   "env": {
     "es6": true,
@@ -57,7 +57,10 @@
     "import/no-extraneous-dependencies": "off",
     "@typescript-eslint/lines-between-class-members": "off",
     "no-alert": "off",
-    "react/jsx-filename-extension": ["error", { "extensions": [".js", ".tsx"] }],
+    "react/jsx-filename-extension": [
+      "error",
+      { "extensions": [".js", ".tsx"] }
+    ],
     "react/jsx-props-no-spreading": "off",
     "react/no-array-index-key": "off",
     "react/require-default-props": "off",

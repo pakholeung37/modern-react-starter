@@ -1,15 +1,24 @@
 import { Editor } from '@trantor/editor'
-import { light_theme } from '@trantor/style'
+import { dark_theme, light_theme } from '@trantor/style'
 import { func } from '@trantor/utils'
+import { useState } from 'react'
 import { app_container } from './index.css'
 
 export const App = () => {
   func()
+  const [theme, setTheme] = useState(light_theme)
   return (
-    <div className={light_theme}>
+    <div className={theme}>
       <div className={app_container}>
         helloworld
         <Editor />
+        <button
+          onClick={() =>
+            setTheme(theme === light_theme ? dark_theme : light_theme)
+          }
+        >
+          toggle theme
+        </button>
       </div>
     </div>
   )
