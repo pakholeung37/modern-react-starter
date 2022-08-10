@@ -4,7 +4,6 @@
   "compilerOptions": {
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
-    "declaration": true,
     "downlevelIteration": true,
     "esModuleInterop": true,
     "isolatedModules": true,

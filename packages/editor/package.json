@@ -1,7 +1,6 @@
 {
   "name": "@trantor/editor",
   "version": "0.0.1",
-  "private": true,
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -15,6 +14,9 @@
   "peerDependencies": {
     "react": ">=16.8",
     "@vanilla-extract/css": ">=1"
+  },
+  "dependencies": {
+    "@trantor/style": "workspace:*"
   },
   "license": "MIT"
 }

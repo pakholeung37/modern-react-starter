@@ -9,6 +9,7 @@ importers:
       '@swc-node/jest': ^1.5.2
       '@swc-node/register': ^1.5.1
       '@types/jest': ^28.1.6
+      '@types/lodash-es': 4.17.6
       '@types/node': ^18.0.0
       '@types/react': 18.0.15
       '@types/react-dom': 18.0.6
@@ -44,6 +45,7 @@ importers:
       '@swc-node/jest': 1.5.2_typescript@4.7.4
       '@swc-node/register': 1.5.1_typescript@4.7.4
       '@types/jest': 28.1.6
+      '@types/lodash-es': 4.17.6
       '@types/node': 18.6.3
       '@types/react': 18.0.15
       '@types/react-dom': 18.0.6
@@ -75,7 +77,10 @@ importers:
       vite: 3.0.1
 
   packages/editor:
-    specifiers: {}
+    specifiers:
+      '@trantor/style': workspace:*
+    dependencies:
+      '@trantor/style': link:../style
 
   packages/editor-playground:
     specifiers:
@@ -90,14 +95,22 @@ importers:
   packages/main:
     specifiers:
       '@trantor/editor': workspace:*
+      '@trantor/style': workspace:*
       '@trantor/utils': workspace:*
       react: 18.2.0
       react-dom: 18.2.0
     dependencies:
       '@trantor/editor': link:../editor
+      '@trantor/style': link:../style
       '@trantor/utils': link:../utils
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+
+  packages/style:
+    specifiers:
+      lodash-es: ^4.17.0
+    dependencies:
+      lodash-es: 4.17.21
 
   packages/utils:
     specifiers: {}
@@ -1430,6 +1443,16 @@ packages:
 
   /@types/json5/0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
+    dev: false
+
+  /@types/lodash-es/4.17.6:
+    resolution: {integrity: sha512-R+zTeVUKDdfoRxpAryaQNRKk3105Rrgx2CFRClIgRGaqDTdjsm8h6IYA8ir584W3ePzkZfst5xIgDwYrlh9HLg==}
+    dependencies:
+      '@types/lodash': 4.14.182
+    dev: false
+
+  /@types/lodash/4.14.182:
+    resolution: {integrity: sha512-/THyiqyQAP9AfARo4pF+aCGcyiQ94tX/Is2I7HofNRqoYLgN1PBoOWu2/zTA5zMxzP5EFutMtWtGAFRKUe961Q==}
     dev: false
 
   /@types/minimist/1.2.2:
@@ -4305,6 +4328,10 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       p-locate: 5.0.0
+    dev: false
+
+  /lodash-es/4.17.21:
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
     dev: false
 
   /lodash.merge/4.6.2:

@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "turbo run build --filter=./packages/**/*",
-    "start": "pnpm --filter=./packages/main start", 
+    "start": "pnpm --filter=./packages/main start",
     "start:editor-playground": "pnpm --filter \"./examples/editor-playground\" start",
     "dev": "turbo run dev --filter=!./examples/*",
     "swc": "node -r @swc-node/register",
@@ -34,6 +34,7 @@
     "@swc-node/jest": "^1.5.2",
     "@swc-node/register": "^1.5.1",
     "@types/jest": "^28.1.6",
+    "@types/lodash-es": "4.17.6",
     "@types/node": "^18.0.0",
     "@types/react": "18.0.15",
     "@types/react-dom": "18.0.6",
